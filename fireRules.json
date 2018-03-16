@@ -41,7 +41,7 @@
           "
         },
         "number":{
-          ".validate": "newData.isString() && newData.val().length==7 && newData.val()<999999999"
+          ".validate": "newData.isString() && newData.val().length==9"
         }
       }
     }
