@@ -9,6 +9,10 @@ import com.google.firebase.database.FirebaseDatabase;
  * Created by Franz on 2017-05-31.
  */
 
+/**
+ * Used for db referencing
+ */
+
 public class MyApplicationData extends Application {
 
     public DatabaseReference firebaseReference;

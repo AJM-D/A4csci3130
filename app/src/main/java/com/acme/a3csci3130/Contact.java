@@ -12,29 +12,96 @@ import java.util.Map;
  * Firebase databse. This is converted to a JSON format
  */
 
-public class Contact implements Serializable {
+/**
+ * @author AJ
+ * @version 1.0
+ */
 
-    public  String uid;
+public class Contact implements Serializable {
     public  String name;
-    public  String email;
+    public  String number;
+    public String business;
+    public String address;
+    public String location;
+
+
+    /**
+     * Getter and setter methods for the business variables
+     *
+     * @return
+     */
+
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public String getName() {return name;}
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getBusiness() {
+        return business;
+    }
+
+    public void setBusiness(String business) {
+        this.business = business;
+    }
 
     public Contact() {
         // Default constructor required for calls to DataSnapshot.getValue
     }
 
-    public Contact(String uid, String name, String email){
-        this.uid = uid;
+    /**
+     *
+     * @param name
+     * @param number
+     * @param business
+     * @param address
+     * @param location
+     */
+    public Contact(String name, String number, String business, String address, String location){
         this.name = name;
-        this.email = email;
+        this.number = number;
+        this.business = business;
+        this.address = address;
+        this.location = location;
     }
 
+    /**
+     *
+     * @return
+     */
     @Exclude
     public Map<String, Object> toMap(){
         HashMap<String, Object> result = new HashMap<>();
-        result.put("uid", uid);
         result.put("name", name);
-        result.put("email", email);
-
+        result.put("number", number);
+        result.put("business", business);
+        result.put("address", address);
+        result.put("location", location);
         return result;
     }
 }
